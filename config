@@ -72,6 +72,7 @@ bindsym $mod+2 workspace 2: Firefox
 bindsym $mod+3 workspace 3: Mail
 bindsym $mod+4 workspace 4: Navigator
 bindsym $mod+5 workspace 5: Workspace
+bindsym $mod+0 workspace 10: Music
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -165,7 +166,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+egrave move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $mod+Shift+agrave move container to workspace 10: Music
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -223,3 +224,4 @@ exec compton -f
 #exec i3-msg 'workspace 2: Firefox; exec firefox ; workspace 1: Editor'
 #exec i3-msg 'workspace 4: Navigator; exec nautilus ; workspace 1: Editor'
 #exec i3-msg 'workspace 1: Editor; exec gnome-terminal'
+exec i3-msg 'exec feh --bg-scale "$(find /home/robb/Images/Wallpaper/|shuf -n1)"'
