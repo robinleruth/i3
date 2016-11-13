@@ -72,6 +72,7 @@ bindsym $mod+2 workspace 2: Firefox
 bindsym $mod+3 workspace 3: Mail
 bindsym $mod+4 workspace 4: Navigator
 bindsym $mod+5 workspace 5: Workspace
+bindsym $mod+6 workspace 6: Hardware Info
 bindsym $mod+0 workspace 10: Music
 
 
@@ -92,7 +93,7 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 50 -opacit
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+Enter exec gnome-terminal
+#bindsym $mod+Enter exec gnome-terminal
 
 # change focus
 bindsym $mod+h focus left
@@ -142,7 +143,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+q focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+a focus child
 
 # switch to workspace
 bindsym $mod+ampersand workspace 1
@@ -156,13 +157,13 @@ bindsym $mod+underscore workspace 8
 bindsym $mod+ccedilla workspace 9
 bindsym $mod+agrave workspace 10
 
-# move focused container to workspace
+#move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1: Editor
 bindsym $mod+Shift+eacute move container to workspace 2: Firefox
 bindsym $mod+Shift+3 move container to workspace 3: Mail
 bindsym $mod+Shift+4 move container to workspace 4: Navigator
 bindsym $mod+Shift+5 move container to workspace 5: Workspace
-bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+6 move container to workspace 6: Hardware Info
 bindsym $mod+Shift+egrave move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+ccedilla move container to workspace 9
@@ -204,6 +205,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	#position top 
         #status_command i3status
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	colors {
@@ -219,9 +221,14 @@ bar {
 }
 
 bindsym $mod+shift+x exec i3lock  -i "$(find /home/robb/Images/Wallpaper/*.png |shuf -n1)"
-bindsym $mod+shift+w exec ~/Script/veille.sh 
+#bindsym $mod+shift+w exec ~/Script/veille.sh 
 exec compton -f
 #exec i3-msg 'workspace 2: Firefox; exec firefox ; workspace 1: Editor'
 #exec i3-msg 'workspace 4: Navigator; exec nautilus ; workspace 1: Editor'
 #exec i3-msg 'workspace 1: Editor; exec gnome-terminal'
 exec i3-msg 'exec feh --bg-scale "$(find /home/robb/Images/Wallpaper/|shuf -n1)"'
+exec i3-msg 'exec conky'
+#exec i3-msg 'workspace 1: Editor; exec gnome-terminal; floating enable; border none; resize set 640 480'
+
+bindsym $mod+c move position mouse
+bindsym $mod+b exec "i3-msg 'floating enable; sticky enable; border none; resize set 640 480'"
