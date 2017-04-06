@@ -75,6 +75,7 @@ bindsym $mod+5 workspace 5: Workspace
 bindsym $mod+6 workspace 6: Workspace 2
 bindsym $mod+7 workspace 7: Workspace 3
 bindsym $mod+8 workspace 8: Hardware Info
+bindsym $mod+9 workspace 9: Steam
 bindsym $mod+0 workspace 10: Music
 
 
@@ -148,16 +149,16 @@ bindsym $mod+q focus parent
 bindsym $mod+a focus child
 
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+#bindsym $mod+ampersand workspace 1
+#bindsym $mod+eacute workspace 2
+#bindsym $mod+quotedbl workspace 3
+#bindsym $mod+apostrophe workspace 4
+#bindsym $mod+parenleft workspace 5
+#bindsym $mod+minus workspace 6
+#bindsym $mod+egrave workspace 7
+#bindsym $mod+underscore workspace 8
+#bindsym $mod+ccedilla workspace 9
+#bindsym $mod+agrave workspace 10
 
 #move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1: Editor
@@ -168,7 +169,7 @@ bindsym $mod+Shift+5 move container to workspace 5: Workspace
 bindsym $mod+Shift+6 move container to workspace 6: Workspace 2
 bindsym $mod+Shift+egrave move container to workspace 7: Workspace 3
 bindsym $mod+Shift+8 move container to workspace 8: Hardware Info
-bindsym $mod+Shift+ccedilla move container to workspace 9
+bindsym $mod+Shift+ccedilla move container to workspace 9: Steam
 bindsym $mod+Shift+agrave move container to workspace 10: Music
 
 # reload the configuration file
@@ -186,10 +187,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym m resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -207,7 +208,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	#position top 
+        #position top 
         #status_command i3status
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	colors {
@@ -225,17 +226,20 @@ bar {
 bindsym $mod+shift+x exec i3lock  -i "$(find /home/robb/Images/Wallpaper/*.png |shuf -n1)"
 #bindsym $mod+shift+w exec ~/Script/veille.sh 
 exec compton -f
-#exec i3-msg 'workspace 2: Firefox; exec firefox ; workspace 1: Editor'
-#exec i3-msg 'workspace 4: Navigator; exec nautilus ; workspace 1: Editor'
-#exec i3-msg 'workspace 1: Editor; exec gnome-terminal'
-exec i3-msg 'exec feh --bg-scale "$(find /home/robb/Images/Wallpaper/|shuf -n1)"'
+#bindsym $mod+t exec i3-msg 'workspace 4: Navigator; exec nautilus; exec sleep 1 ; workspace 2: Firefox; exec firefox'
+exec i3-msg 'exec feh --bg-scale "$(find /home/robin/Images/Wallpaper/|shuf -n1)"'
 exec i3-msg 'exec conky'
 #exec i3-msg 'workspace 1: Editor; exec gnome-terminal; floating enable; border none; resize set 640 480'
 
 bindsym $mod+c move position mouse
 bindsym $mod+b exec "i3-msg 'floating enable; sticky enable; border none; resize set 300 170'"
-bindsym $mod+n exec "i3-msg 'border toggle'"
-bindsym $mod+comma exec "i3-msg 'resize set 300 250'"
-bindsym $mod+semicolon exec "i3-msg 'sticky toggle'"
-bindsym $mod+o exec "date >> ~/Documents/cycle\ du\ sommeil.txt"
+bindsym $mod+semicolon exec "i3-msg 'workspace 5: Workspace; exec virtualbox; layout tabbed'"
+bindsym $mod+m exec "killall firefox"
+#bindsym $mod+comma exec "i3-msg 'resize set 300 250'"
+bindsym $mod+n exec "i3-msg 'workspace 2: Firefox; exec firefox'"
+bindsym $mod+comma exec "i3-msg 'workspace 4: Navigator; exec nautilus'"
+#bindsym $mod+o exec "date >> ~/Documents/cycle\ du\ sommeil.txt"
 bindsym $mod+F11 exec "gnome-screenshot"
+bindsym $mod+y exec "feh --bg-scale /home/robin/Images/Wallpaper/4451137-megan-fox-wallpapers.jpeg"
+bindsym $mod+u exec "xrandr --output HDMI1 --mode 1920x1080i --output eDP1 --off"
+bindsym $mod+i exec "xrandr --output HDMI1 --off --output eDP1 --auto"
