@@ -48,9 +48,10 @@ total_run_times 0
 
 # Create own window instead of using desktop (required in nautilus)
 own_window yes
+own_window_class Conky
 
 # If own_window is yes, you may use type normal, desktop or override
-own_window_type desktop
+own_window_type override
 
 # Use pseudo transparency with own_window?
 own_window_transparent yes
@@ -94,8 +95,8 @@ default_shade_color black
 default_outline_color black
 
 # Text alignment, other possible values are commented
-#alignment top_left
-alignment top_right
+alignment top_left
+#alignment top_right
 #alignment bottom_left
 #alignment bottom_right
 #alignment none
