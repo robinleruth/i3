@@ -137,7 +137,7 @@ bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space exec --no-startup-id exec i3fyra -a
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -224,34 +224,24 @@ bar {
 }
 
 bindsym $mod+shift+x exec i3lock  -i "/home/robin/Desktop/fond.png",exec systemctl suspend
-#bindsym $mod+shift+w exec ~/Script/veille.sh 
 exec compton -f
-#bindsym $mod+t exec i3-msg 'workspace 4: Navigator; exec nautilus; exec sleep 1 ; workspace 2: Firefox; exec firefox'
 exec i3-msg 'exec feh --bg-scale /home/robin/Desktop/fond.png'
 exec i3-msg 'exec conky'
-#exec i3-msg 'workspace 1: Editor; exec gnome-terminal; floating enable; border none; resize set 640 480'
 
-bindsym $mod+shift+b exec "/home/robin/bin/task_manager"
-bindsym $mod+c exec "i3-msg 'floating enable; sticky enable'"
-bindsym $mod+b exec "i3-msg 'floating enable; sticky enable; border none; resize set 300 170'"
-bindsym $mod+semicolon exec "i3-msg 'workspace 5; exec virtualbox; layout tabbed'"
 bindsym $mod+shift+m exec "killall xinit; poweroff"
-#bindsym $mod+comma exec "i3-msg 'resize set 300 250'"
-bindsym $mod+n exec "i3-msg 'workspace 2; exec firefox'"
-bindsym $mod+comma exec "i3-msg 'workspace 4; exec nautilus'"
-#bindsym $mod+o exec "date >> ~/Documents/cycle\ du\ sommeil.txt"
+bindsym $mod+n exec firefox
+bindsym $mod+comma exec nautilus
 bindsym $mod+F11 exec "gnome-screenshot"
-#bindsym $mod+u exec "xrandr --output HDMI1 --mode 1920x1080i --output eDP1 --off"
 bindsym $mod+shift+y exec "conky"
 bindsym $mod+y exec "amixer -q set Master toggle"
 bindsym $mod+u exec "amixer set Master 3%-"
 bindsym $mod+i exec "amixer set Master 3%+"
 bindsym $mod+shift+u exec "light -S 0"
 bindsym $mod+shift+i exec "light -S 100"
-#bindsym $mod+i exec "xrandr --output HDMI1 --off --output eDP1 --auto"
-bindsym $mod+p exec "exec gnome-control-center"
 bindsym $mod+shift+p exec "/home/robin/bin/de_switch"
 
 
 for_window [class="^.*"] floating enabled
-for_window [class="^.*"] focus; exec --no-startup-id exec i3fyra -a
+for_window [class="vlc"] focus; exec --no-startup-id exec i3fyra -s D
+for_window [class="Firefox"] focus; exec --no-startup-id exec i3fyra -s A
+for_window [class="Nautilus"] focus; exec --no-startup-id exec i3fyra -s B
