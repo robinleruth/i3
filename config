@@ -129,7 +129,7 @@ bindsym $mod+g split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+# bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -209,8 +209,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         #position top 
-        #status_command i3status
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        status_command i3status
+        # status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	colors {
 	      separator $base03
 	      background $base01
@@ -232,10 +232,10 @@ exec i3-msg 'exec conky'
 #exec i3-msg 'workspace 1: Editor; exec gnome-terminal; floating enable; border none; resize set 640 480'
 
 bindsym $mod+shift+b exec "/home/robin/bin/task_manager"
-bindsym $mod+c exec "i3-msg 'floating enable; sticky enable'"
+# bindsym $mod+c exec "i3-msg 'floating enable; sticky enable'"
 bindsym $mod+b exec "i3-msg 'floating enable; sticky enable; border none; resize set 300 170'"
-bindsym $mod+semicolon exec "ramdisk.sh"
-bindsym $mod+colon exec "umount_ramdisk.sh"
+# bindsym $mod+semicolon exec "ramdisk.sh"
+# bindsym $mod+colon exec "umount_ramdisk.sh"
 bindsym $mod+shift+m exec "killall xinit; poweroff"
 #bindsym $mod+comma exec "i3-msg 'resize set 300 250'"
 bindsym $mod+n exec "i3-msg 'workspace 2: Firefox; exec firefox'"
@@ -252,5 +252,8 @@ bindsym $mod+shift+i exec "light -S 100"
 #bindsym $mod+i exec "xrandr --output HDMI1 --off --output eDP1 --auto"
 bindsym $mod+p exec "exec gnome-control-center"
 bindsym $mod+shift+p exec "/home/robin/bin/de_switch"
+bindsym $mod+f move scratchpad
+bindsym $mod+shift+f scratchpad show
+bindsym $mod+c exec "/home/robin/.config/i3/start_w1.sh"
 
-for_window [class="Gnome-terminal"] floating enabled
+# for_window [class="Gnome-terminal"] floating enabled
