@@ -254,6 +254,6 @@ bindsym $mod+p exec "exec gnome-control-center"
 bindsym $mod+shift+p exec "/home/robin/bin/de_switch"
 bindsym $mod+f move scratchpad
 bindsym $mod+shift+f scratchpad show
-bindsym $mod+c exec "/home/robin/.config/i3/start_w1.sh"
+bindsym $mod+c exec "/home/robin/.config/i3/start_v1.sh"
 
 # for_window [class="Gnome-terminal"] floating enabled
