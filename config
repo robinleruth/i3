@@ -231,7 +231,10 @@ exec i3-msg 'exec feh --bg-scale /home/robin/Desktop/kali.jpg'
 exec i3-msg 'exec conky'
 #exec i3-msg 'workspace 1: Editor; exec gnome-terminal; floating enable; border none; resize set 640 480'
 
-bindsym $mod+shift+b exec "/home/robin/bin/task_manager"
+bindsym $mod+shift+b exec "xrandr --output LVDS1 --mode 1366x768"
+bindsym $mod+shift+n exec "xrandr --output LVDS1 --mode 1024x768"
+bindsym $mod+shift+comma exec "sudo systemctl restart speaker.service"
+bindsym $mod+shift+semicolon exec "/home/robin/Projet/memoire/start.sh"
 # bindsym $mod+c exec "i3-msg 'floating enable; sticky enable'"
 bindsym $mod+b exec "i3-msg 'floating enable; sticky enable; border none; resize set 300 170'"
 # bindsym $mod+semicolon exec "ramdisk.sh"
@@ -257,3 +260,9 @@ bindsym $mod+shift+f scratchpad show
 bindsym $mod+c exec "/home/robin/.config/i3/start_v1.sh"
 
 # for_window [class="Gnome-terminal"] floating enabled
+for_window [class="Tk"] floating enabled
+# for_window [instance="^PlayOnLinux$"] floating enabled
+
+exec  "i3-msg 'workspace 1: Editor; exec gnome-terminal'"
+exec  "i3-msg 'workspace 4: Navigator; exec nautilus'"
+exec  "i3-msg 'workspace 2: Firefox; exec firefox'"

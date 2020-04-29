@@ -32,26 +32,6 @@
                     "percent": 0.333333333333333,
                     "swallows": [
                        {
-                       "class": "Gnome-terminal",
-                       "instance": "gnome-terminal-server"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "normal",
-                    "current_border_width": 2,
-                    "floating": "user_off",
-                    "geometry": {
-                       "height": 434,
-                       "width": 642,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "robin@robin:~",
-                    "percent": 0.333333333333333,
-                    "swallows": [
-                       {
                        "class": "Gnome-terminal"
                        }
                     ],
