@@ -266,3 +266,4 @@ for_window [class="Tk"] floating enabled
 exec  "i3-msg 'workspace 1: Editor; exec gnome-terminal'"
 exec  "i3-msg 'workspace 4: Navigator; exec nautilus'"
 exec  "i3-msg 'workspace 2: Firefox; exec firefox'"
+exec i3lock  -i "/home/robin/Desktop/fond.png"
