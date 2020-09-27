@@ -225,7 +225,7 @@ bar {
 
 bindsym $mod+shift+x exec i3lock  -i "/home/robin/Desktop/fond.png",exec systemctl suspend
 #bindsym $mod+shift+w exec ~/Script/veille.sh 
-exec compton -f
+exec_always compton -f
 #bindsym $mod+t exec i3-msg 'workspace 4: Navigator; exec nautilus; exec sleep 1 ; workspace 2: Firefox; exec firefox'
 exec i3-msg 'exec feh --bg-scale /home/robin/Desktop/kali.jpg'
 exec i3-msg 'exec conky'
@@ -266,4 +266,6 @@ for_window [class="Tk"] floating enabled
 exec  "i3-msg 'workspace 1: Editor; exec gnome-terminal'"
 exec  "i3-msg 'workspace 4: Navigator; exec nautilus'"
 exec  "i3-msg 'workspace 2: Firefox; exec firefox'"
-exec i3lock  -i "/home/robin/Desktop/fond.png"
+exec_always i3lock  -i "/home/robin/Desktop/fond.png"
+
+workspace "2: Firefox" output HDMI1
